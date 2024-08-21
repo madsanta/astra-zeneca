@@ -117,6 +117,12 @@ export default {
         left: 0;
         right: 0;
         z-index: 2;
+        overflow: hidden;
+        height: rem(955);
+
+        img {
+            object-fit: cover;
+        }
     }
 
     .wrapper {
