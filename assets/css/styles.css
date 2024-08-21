@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    font-size: 0;
+}
+
+div,
+p,
+ul,
+li,
+b,
+span,
+a {
+    font-size: inherit;
+}
+
+sup {
+    font-size: 55%;
+    vertical-align: super;
+    top: 0;
+}
+
+html,
+button,
+ul,
+li{
+    line-height: normal;
+}
+
+body
+{
+    font-family: 'Murecho', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.showModal {
+    position: fixed;
+    height: 100vh;
+}
+
+.text-shadow-1 {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-2 {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.pink {
+    color: #FF53FF;
+}
+
+.blue {
+    color: #7FECF8;
+}
+
+.black {
+    color: #00215F;
+}
+
+.white {
+    color: #fff;
+}
