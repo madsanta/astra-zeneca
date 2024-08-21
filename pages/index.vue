@@ -31,11 +31,13 @@
         <SectionTwenty />
         <SectionTwentyOne />
         <SectionTwentyTwo />
+        <FooterBlock />
     </div>
 </template>
 
 <script>
 import MainIntro from '~/components/MainIntro/index.vue'
+import FooterBlock from '~/components/Footer/index.vue'
 import SectionOne from '~/components/SectionOne/index.vue'
 import SectionTwo from '~/components/SectionTwo/index.vue'
 import SectionThree from '~/components/SectionThree/index.vue'
@@ -63,6 +65,7 @@ export default {
     name: 'IndexPage',
     components: {
         MainIntro,
+        FooterBlock,
         SectionOne,
         SectionTwo,
         SectionThree,

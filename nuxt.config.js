@@ -21,7 +21,15 @@ export default {
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
-            { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+            { rel: 'icon', type: 'image/x-icon', href: '/icon-favicon.ico' },
+            { rel: 'apple-touch-icon', type: 'image/x-icon', href: '/icon-apple-touch-icon.png' },
+            { rel: 'apple-touch-icon', sizes: '57x57', type: 'image/x-icon', href: '/icon-apple-touch-icon-57x57.png' },
+            { rel: 'apple-touch-icon', sizes: '72x72', type: 'image/x-icon', href: '/icon-apple-touch-icon-72x72.png' },
+            { rel: 'apple-touch-icon', sizes: '76x76', type: 'image/x-icon', href: '/icon-apple-touch-icon-76x76.png' },
+            { rel: 'apple-touch-icon', sizes: '114x114', type: 'image/x-icon', href: '/icon-apple-touch-icon-114x114.png' },
+            { rel: 'apple-touch-icon', sizes: '120x120', type: 'image/x-icon', href: '/icon-apple-touch-icon-120x120.png' },
+            { rel: 'apple-touch-icon', sizes: '144x144', type: 'image/x-icon', href: '/icon-apple-touch-icon-144x144.png' },
+            { rel: 'apple-touch-icon', sizes: '152x152', type: 'image/x-icon', href: '/icon-apple-touch-icon-152x152.png' },
             { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
             { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
             { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Murecho:wght@100..900&display=swap' },
