@@ -1,13 +1,13 @@
 <template>
     <div :class="$style.section">
         <div :class="$style.bg" />
-        <div :class="$style.bgStars">
-            <img src="~/assets/img/section-12/bg-stars.png">
-        </div>
         <div :class="$style.bgBottom">
             <img src="~/assets/img/section-12/bg-bottom.png">
         </div>
         <div :class="[$style.wrapper, 'white']">
+            <div :class="$style.bgStars">
+                <img src="~/assets/img/section-12/bg-stars.png">
+            </div>
             <div :class="$style.title">
                 Принципы лечения дислипидемий <sup>1,10,11,15</sup>
             </div>
@@ -118,9 +118,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div :class="$style.man">
-            <img src="~/assets/img/section-12/man.png">
+            <div :class="$style.man">
+                <img src="~/assets/img/section-12/man.png">
+            </div>
         </div>
     </div>
 </template>
@@ -156,7 +156,8 @@ export default {
         position: absolute;
         top: rem(-35);
         right: rem(-325);
-        z-index: 2;
+        width: rem(932);
+        z-index: -1;
     }
 
     .bgBottom {
@@ -166,12 +167,14 @@ export default {
         left: 0;
         right: 0;
         z-index: 2;
+        overflow: hidden;
+        height: rem(1120);
     }
 
     .man {
         position: absolute;
         bottom: 0;
-        right: rem(-232);
+        right: rem(-394);
         width: rem(1063);
         z-index: 3;
     }

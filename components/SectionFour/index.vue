@@ -1,10 +1,10 @@
 <template>
     <div :class="$style.section">
         <div :class="$style.bg" />
-        <div :class="$style.stars">
-            <img src="~/assets/img/section-4/stars.png">
-        </div>
         <div :class="$style.inner">
+            <div :class="$style.stars">
+                <img src="~/assets/img/section-4/stars.png">
+            </div>
             <h3 :class="[$style.title, 'white', 'text-shadow-2']">
                 Причины дислипидемий <sup>1,10</sup>
             </h3>
@@ -122,7 +122,7 @@ export default {
         top: rem(808);
         right: rem(-182); // плюс 86px границы картинки
         width: rem(820);
-        z-index: 2;
+        z-index: -1;
 
         @include relativeHeight(820, 809);
 

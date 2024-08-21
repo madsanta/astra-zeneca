@@ -110,6 +110,7 @@ export default {
 
         &Button {
             margin-top: rem(30);
+            margin-left: 0;
         }
     }
 
@@ -117,12 +118,12 @@ export default {
         position: absolute;
         right: 0;
         bottom: 0;
-        width: calc(454 * 100% / 1340);
+        width: rem(454);
     }
 
     .qr {
         position: absolute;
-        width: calc(200 * 100% / 1340);
+        width: rem(200);
         right: 36%;
         bottom: rem(50);
     }

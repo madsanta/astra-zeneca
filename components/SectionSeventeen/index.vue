@@ -1,13 +1,13 @@
 <template>
     <div :class="$style.section">
         <div :class="$style.bg" />
-        <div :class="$style.bgStars">
-            <img src="~/assets/img/section-12/bg-stars.png">
-        </div>
         <div :class="$style.bgCenter">
             <img src="~/assets/img/section-17/bg-center.png">
         </div>
         <div :class="[$style.wrapper, 'white']">
+            <div :class="$style.bgStars">
+                <img src="~/assets/img/section-12/bg-stars.png">
+            </div>
             <div :class="$style.title">
                 Программа клинических исследований GALAXY
             </div>
@@ -54,7 +54,7 @@ export default {
 <style module lang="scss">
     .section {
         position: relative;
-        overflow: clip;
+        overflow-x: clip;
 
         @include block-rounded-top(-47);
     }
@@ -74,18 +74,21 @@ export default {
 
     .bgStars {
         position: absolute;
+        width: rem(989);
         top: rem(-35);
         right: rem(-325);
-        z-index: 2;
+        z-index: -1;
     }
 
     .bgCenter {
         position: absolute;
         width: 100%;
-        top: rem(507);
+        top: calc(507 * 100% / 3370);
         left: 0;
         right: 0;
         z-index: 2;
+        overflow: hidden;
+        max-height: calc(100% - (507 * 100% / 3370));
     }
 
     .wrapper {
