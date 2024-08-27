@@ -14,7 +14,7 @@ export default async function ({ $axios, redirect }) {
     const accessToken = localStorage.getItem('accessToken')
     const refreshToken = localStorage.getItem('refreshToken')
 
-    if (accessToken !== 'null') {
+    if (!!accessToken && accessToken !== 'null') {
         try {
             const res = await $axios.get('https://az-most.ru/api/auth/session', {
                 headers: {
