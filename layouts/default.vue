@@ -32,6 +32,10 @@ export default {
         this.hash = window.location?.hash?.slice(1)
 
         this.scrollTo()
+
+        setTimeout(() => {
+            window.location.reload()
+        }, 1000 * 60 * 60 * 24) // every day reload
     },
     methods: {
         scrollTo () {
