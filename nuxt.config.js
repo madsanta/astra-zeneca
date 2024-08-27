@@ -2,13 +2,10 @@ export default {
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
     ssr: false,
 
-    server: {
-        port: '5501'
-    },
-
     // Target: https://go.nuxtjs.dev/config-target
     target: 'static',
     router: {
+        base: '/astra-zeneca/',
         middleware: 'auth'
     },
 
