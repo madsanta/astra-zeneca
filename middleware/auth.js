@@ -30,7 +30,7 @@ export default async function ({ $axios, redirect }) {
             if (res.status === 200) {
                 localStorage.setItem('accessToken', accessToken)
             } else if (res.status === 401) {
-                const refresh = await $axios.post('https://az-most.ru/api/auth/session',
+                const refresh = await $axios.post('https://az-most.ru/api/auth/sso-update-tokens',
                     {
                         refresh: refreshToken || ''
                     },
