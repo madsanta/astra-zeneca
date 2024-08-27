@@ -127,6 +127,11 @@ export default {
         position: relative;
         padding-top: rem(120);
         padding-bottom: rem(120);
+
+        @include mobile {
+            padding-top: rem(90);
+            padding-bottom: rem(90);
+        }
     }
 
     .title {
@@ -137,6 +142,17 @@ export default {
         margin-top: rem(30);
         font-size: rem(15);
 
+        @include mobile {
+            margin-top: rem(20);
+            font-size: rem(14);
+        }
+
+        p {
+            @include mobile {
+                word-break: break-all;
+            }
+        }
+
         p + p {
             margin-top: rem(10);
         }
@@ -144,5 +160,9 @@ export default {
 
     .button {
         margin-top: rem(40);
+
+        @include mobile {
+            margin-top: rem(40);
+        }
     }
 </style>

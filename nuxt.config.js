@@ -34,6 +34,33 @@ export default {
             { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: true },
             { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Murecho:wght@100..900&display=swap' },
             { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Murecho:wght@100..900&display=swap' }
+        ],
+        __dangerouslyDisableSanitizers: ['script', 'noscript'],
+        script: [
+            {
+                hid: 'ya-metrika',
+                innerHTML: `
+                        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                           m[i].l=1*new Date();
+                           for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                           k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                           (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                           ym(91468266, "init", {
+                                clickmap:true,
+                                trackLinks:true,
+                                accurateTrackBounce:true,
+                                webvisor:true
+                           });`,
+                type: 'text/javascript',
+                charset: 'utf-8'
+            }
+        ],
+        noscript: [
+            {
+                hid: 'ya-metrika-noscript',
+                innerHTML: '<div><img src="https://mc.yandex.ru/watch/94870334" style="position:absolute; left:-9999px;" alt="" /></div>'
+            }
         ]
     },
 

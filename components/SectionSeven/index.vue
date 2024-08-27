@@ -9,12 +9,13 @@
                     <div :class="$style.tabsInner">
                         <div :class="[$style.hint, 'white']">
                             <IconClick />
-                            Выберите один из пунктов на созвездии ниже
+                            <span class="onlyDesktop">Выберите один из пунктов на созвездии ниже</span>
+                            <span class="onlyMobile">Выберите один из пунктов, чтобы узнать подробнее</span>
                         </div>
-                        <div :class="$style.arrow">
+                        <div :class="[$style.arrow, 'onlyDesktop']">
                             <IconArrow />
                         </div>
-                        <div :class="$style.man">
+                        <div :class="[$style.man, 'onlyDesktop']">
                             <img src="~/assets/img/section-7/man.png">
                         </div>
                         <div :class="$style.tabs">
@@ -60,7 +61,8 @@
                                 ]"
                                 @click="clickTab(4)"
                             >
-                                Лодыжечно-плечевой индекс&nbsp;(ЛПИ)
+                                <span class="onlyDesktop">Лодыжечно-плечевой индекс&nbsp;(ЛПИ)</span>
+                                <span class="onlyMobile">ЛПИ</span>
                             </div>
                         </div>
                     </div>
@@ -121,6 +123,11 @@ export default {
         background-repeat: no-repeat;
         padding-top: rem(130);
         overflow: hidden;
+
+        @include mobile {
+            background-image: url('~/assets/img/section-7/bg-mobile.jpg');
+            padding-top: rem(110);
+        }
     }
 
     .wrapper {
@@ -136,6 +143,10 @@ export default {
         @include title;
 
         width: calc(823 * 100% / 1440);
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     .tabsWrapper {
@@ -143,6 +154,13 @@ export default {
         width: rem(504); // по подсказке взята ширина
         right: 0;
         bottom: 0;
+
+        @include mobile {
+            position: relative;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
     }
 
     .tabsInner {
@@ -170,12 +188,33 @@ export default {
         box-shadow: 0 rem(20) rem(40) rem(-20) rgba(#000, 0.8);
         transform: translate(-50%, -100%);
 
+        @include mobile {
+            position: relative;
+            width: 100%;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin-top: rem(30);
+            background: none;
+            padding: 0;
+            border-radius: 0;
+            font-size: rem(12);
+            transform: none;
+            border: none;
+            backdrop-filter: none;
+            box-shadow: none;
+        }
+
         svg {
             flex: 0 0 auto;
             width: rem(30);
             height: rem(30);
             margin-right: rem(15);
             fill: currentColor;
+
+            @include mobile {
+                margin-right: rem(10);
+            }
         }
     }
 
@@ -198,6 +237,15 @@ export default {
         height: 100%;
         top: 0;
         left: 0;
+
+        @include mobile {
+            position: relative;
+            height: auto;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: rem(15);
+        }
     }
 
     .tab {
@@ -214,9 +262,29 @@ export default {
         text-transform: uppercase;
         transition: background-color 0.2s, font-weight 0.2s;
 
+        @include mobile {
+            position: relative;
+            top: 0 !important;
+            right: 0 !important;
+            left: 0 !important;
+            bottom: 0 !important;
+            padding: rem(12) rem(19);
+            min-width: auto;
+            max-width: initial;
+            border-radius: rem(20);
+            margin-right: rem(5);
+            margin-bottom: rem(5);
+            font-size: rem(14);
+        }
+
         &:nth-child(1) {
             top: 10.5%;
             border-top-right-radius: 5px;
+
+            @include mobile {
+                border-top-right-radius: rem(20);
+                border-bottom-left-radius: 5px;
+            }
         }
 
         &:nth-child(2) {
@@ -229,12 +297,22 @@ export default {
             top: 41%;
             left: 3%;
             border-top-right-radius: 5px;
+
+            @include mobile {
+                border-top-right-radius: rem(20);
+                border-bottom-left-radius: 5px;
+            }
         }
 
         &:nth-child(4) {
             bottom: 18.5%;
             left: 16.5%;
             border-top-left-radius: 5px;
+
+            @include mobile {
+                border-top-left-radius: rem(20);
+                border-bottom-left-radius: 5px;
+            }
         }
 
         &:hover,
@@ -247,5 +325,10 @@ export default {
     .content {
         width: calc(823 * 100% / 1440);
         margin-top: rem(50);
+
+        @include mobile {
+            margin-top: rem(30);
+            width: 100%;
+        }
     }
 </style>

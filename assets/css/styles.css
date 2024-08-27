@@ -48,6 +48,7 @@ img {
 .showModal {
     position: fixed;
     height: 100vh;
+    width: 100%;
 }
 
 .text-shadow-1 {
@@ -72,4 +73,58 @@ img {
 
 .white {
     color: #fff;
+}
+
+/* mobile*/
+@media (max-width: 1023px) {
+    .onlyDesktop {
+        display: none !important;
+    }
+
+    .vue-horizontal {
+        width: 3.75rem;
+        margin-left: -0.15rem;
+    }
+
+    .v-hl-container {
+        padding-left: 0.15rem !important;
+        padding-bottom: 0.5rem !important;
+        margin-bottom: -0.5rem !important;
+        clip-path: none !important;
+    }
+
+    .mobileScrollBlock {
+        overflow-y: scroll;
+        padding-bottom: 0.8rem;
+        margin-bottom: -0.8rem;
+        width: 3.75rem;
+        margin-left: -0.15rem;
+        padding-left: 0.15rem;
+        padding-right: 0.15rem;
+        scrollbar-width: none;
+    }
+
+    .iconSwipe {
+        margin-left: auto;
+        width: 0.3rem;
+        height: 0.3rem;
+    }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+    .onlyMobile {
+        display: none !important;
+    }
+
+    .v-hl-container {
+        justify-content: space-between;
+        clip-path: none !important;
+        overflow: visible !important;
+        flex-wrap: wrap;
+    }
+
+    .iconSwipe {
+        display: none;
+    }
 }

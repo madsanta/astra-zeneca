@@ -101,6 +101,12 @@ export default {
         position: relative;
         padding-top: rem(120);
         padding-bottom: rem(160);
+
+        @include mobile {
+            padding-top: rem(90);
+            //padding-bottom: rem(200); // Правильный отступ при всех блоках
+            padding-bottom: rem(50);
+        }
     }
 
     .title {
@@ -108,10 +114,18 @@ export default {
 
         font-weight: $fw-extraBold;
         width: calc(700 * 100% / 1440);
+
+        @include mobile {
+            width: 100%;
+        }
     }
 
     .items {
         margin-top: rem(60);
+
+        @include mobile {
+            margin-top: rem(30);
+        }
     }
 
     .item {
@@ -127,6 +141,11 @@ export default {
 
         @include rainbow-shadow();
 
+        @include mobile {
+            padding: rem(20);
+            margin-top: rem(10);
+        }
+
         &:first-child {
             margin-top: 0;
         }
@@ -136,11 +155,13 @@ export default {
             transition: opacity 0.2s;
         }
 
-        &:hover {
-            box-shadow: none;
+        @include desktop {
+            &:hover {
+                box-shadow: none;
 
-            &::before {
-                opacity: 1;
+                &::before {
+                    opacity: 1;
+                }
             }
         }
 
@@ -149,15 +170,26 @@ export default {
             justify-content: space-between;
             align-items: center;
 
+            @include mobile {
+                align-items: flex-start;
+            }
+
             &Text {
                 font-size: rem(24);
                 line-height: rem(34);
                 font-weight: $fw-bold;
                 margin-right: rem(15);
                 letter-spacing: 0;
+
+                @include mobile {
+                    font-size: rem(18);
+                    line-height: rem(28);
+                    margin-right: rem(10);
+                }
             }
 
             &Icon {
+                flex: 0 0 auto;
                 position: relative;
                 border: 1px solid $c-blackBlue;
                 border-radius: 100%;
@@ -191,11 +223,15 @@ export default {
         &.active {
             .item {
                 &HeaderIcon {
-                    background-color: $c-pink;
-                    border-color: $c-pink;
+                    @include desktop {
+                        background-color: $c-pink;
+                        border-color: $c-pink;
+                    }
 
                     &Line {
-                        background-color: #fff;
+                        @include desktop {
+                            background-color: #fff;
+                        }
 
                         &:first-child {
                             transform: translate(-50%, -50%) rotate(-45deg);
@@ -216,10 +252,20 @@ export default {
             padding-bottom: rem(3);
             letter-spacing: 0;
 
+            @include mobile {
+                margin-top: rem(20);
+                font-size: rem(15);
+                padding-bottom: 0;
+            }
+
             &Line {
                 height: 1px;
                 margin-bottom: rem(30);
                 background: lg-rainbow();
+
+                @include mobile {
+                    margin-top: rem(20);
+                }
             }
 
             ul {

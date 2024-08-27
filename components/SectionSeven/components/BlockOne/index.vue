@@ -3,7 +3,7 @@
         <div :class="[$style.title, 'pink', 'text-shadow-2']">
             Осмотр <sup>12-14</sup>
         </div>
-        <div :class="$style.content">
+        <div :class="[$style.content, {[$style.isShow]: isShowMore}]">
             <div :class="$style.column">
                 <div :class="$style.item">
                     <div :class="$style.icon">
@@ -89,12 +89,28 @@
                 </div>
             </div>
         </div>
+        <ButtonAction
+            :class="[$style.button, 'onlyMobile']"
+            preset="white"
+            :title="!isShowMore ? 'Показать полностью' : 'Скрыть'"
+            @handleClick="isShowMore = !isShowMore"
+        />
     </div>
 </template>
 
 <script>
+import ButtonAction from '~/components/common/ButtonAction/index.vue'
+
 export default {
-    name: 'BlockOne'
+    name: 'BlockOne',
+    components: {
+        ButtonAction
+    },
+    data: function () {
+        return {
+            isShowMore: false
+        }
+    }
 }
 </script>
 
@@ -102,6 +118,11 @@ export default {
     .block {
         width: calc(944 * 100% / 823);
         padding-bottom: rem(24); // 44 - 20 у каждого блока
+
+        @include mobile {
+            width: 100%;
+            padding-bottom: rem(85);
+        }
     }
 
     .title {
@@ -113,16 +134,47 @@ export default {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @include mobile {
+            margin-top: rem(20);
+        }
+    }
+
+    .button {
+        margin-top: rem(10);
     }
 
     .column {
         width: calc(452 * 100% / 944);
+
+        @include mobile {
+            width: 100%;
+
+            &:last-child {
+                display: none;
+
+                .isShow & {
+                    display: block;
+                }
+            }
+        }
     }
 
     .item {
         display: flex;
         align-items: center;
         margin-bottom: rem(20);
+
+        @include mobile {
+
+            &:nth-child(n + 4) {
+                display: none;
+
+                .isShow & {
+                    display: flex;
+                }
+            }
+        }
     }
 
     .icon {
@@ -134,6 +186,10 @@ export default {
 
         @include relativeHeight(140, 140);
 
+        @include mobile {
+            width: rem(104);
+        }
+
         img {
             @include absoluteCoverImg();
         }
@@ -143,6 +199,11 @@ export default {
         margin-left: rem(40);
         font-size: rem(18);
         font-weight: $fw-medium;
+
+        @include mobile {
+            font-size: rem(15);
+            margin-left: rem(20);
+        }
 
         span {
             font-weight: $fw-bold;

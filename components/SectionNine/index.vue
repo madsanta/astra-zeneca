@@ -59,6 +59,10 @@ export default {
 
         position: relative;
         top: rem(-120);
+
+        @include mobile {
+            top: rem(-100);
+        }
     }
 
     .block {
@@ -70,6 +74,10 @@ export default {
         overflow: visible;
 
         @include rainbow-shadow();
+
+        @include mobile {
+            padding: rem(20) rem(20) rem(205);
+        }
     }
 
     .title {
@@ -83,6 +91,11 @@ export default {
         margin-top: rem(40);
         width: calc(650 * 100% / 1340);
 
+        @include mobile {
+            width: 100%;
+            margin-top: rem(10);
+        }
+
         &Title {
             @include block-title;
         }
@@ -90,19 +103,36 @@ export default {
         &Text {
             margin-top: rem(15);
 
+            @include mobile {
+                margin-top: rem(10);
+            }
+
             p {
                 font-family: Kanit, sans-serif;
                 font-size: rem(18);
                 font-weight: $fw-semiBold;
 
+                @include mobile {
+                    font-size: rem(15);
+                }
+
                 & + p {
                     margin-top: rem(30);
+
+                    @include mobile {
+                        margin-top: rem(10);
+                    }
                 }
             }
 
             ul {
                 margin-top: rem(15);
                 font-size: rem(17);
+
+                @include mobile {
+                    margin-top: rem(5);
+                    font-size: rem(15);
+                }
 
                 @include ul;
             }
@@ -119,6 +149,11 @@ export default {
         right: 0;
         bottom: 0;
         width: rem(454);
+
+        @include mobile {
+            width: rem(125);
+            right: rem(20);
+        }
     }
 
     .qr {
@@ -126,5 +161,12 @@ export default {
         width: rem(200);
         right: 36%;
         bottom: rem(50);
+
+        @include mobile {
+            width: rem(140);
+            right: auto;
+            left: rem(20);
+            bottom: rem(35);
+        }
     }
 </style>

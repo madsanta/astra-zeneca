@@ -15,62 +15,85 @@
             <div :class="[$style.description, 'black']">
                 Распространенность дислипидемий в популяции мужчин и женщин 35-74 лет, проживающих в Российской Федерации в 2020-2022гг. (ЭССЕ РФ)<sup>8</sup>
             </div>
-            <div :class="$style.blocks">
-                <div :class="$style.block">
-                    <div :class="$style.blockIcon">
-                        <IconBlock1 />
-                    </div>
-                    <div :class="[$style.blockText, 'black']">
-                        имеют уровень общего холестерина<br>
-                        <span class="pink">≥5 ммоль/л</span>
-                    </div>
-                </div>
-                <div :class="$style.block">
-                    <div :class="$style.blockIcon">
-                        <IconBlock2 />
-                    </div>
-                    <div :class="[$style.blockText, 'black']">
-                        имеют уровень ХС ЛНП<br>
-                        <span class="pink">>3 ммоль/л</span>
-                    </div>
-                </div>
-                <div :class="$style.block">
-                    <div :class="$style.blockIcon">
-                        <IconBlock3 />
-                    </div>
-                    <div :class="[$style.blockText, 'black']">
-                        имеют уровень триглицеридов<br>
-                        <span class="pink">>1,7 ммоль/л</span>
-                    </div>
-                </div>
-                <div :class="$style.block">
-                    <div :class="$style.blockIcon">
-                        <IconBlock4 />
-                    </div>
-                    <div :class="[$style.blockText, 'black']">
-                        имеют сниженный уровень<br>
-                        ХС ЛВП – <span class="pink">{{ "<1, 0 ммоль / л у мужчин" }}</span><br>
-                        и <span class="pink">{{ "<1,2 ммоль/л у женщин" }}</span>
-                    </div>
-                </div>
+            <div :class="['iconSwipe', 'onlyMobile']">
+                <IconSwipeLeft />
             </div>
+            <div :class="$style.blocks">
+                <VueHorizontal ref="horizontal" :button="false" snap="center" @scroll-debounce="onScrollDebounce">
+                    <div :class="$style.block">
+                        <div :class="$style.blockIcon">
+                            <IconBlock1 />
+                        </div>
+                        <div :class="[$style.blockText, 'black']">
+                            имеют уровень общего холестерина<br>
+                            <span class="pink">≥5 ммоль/л</span>
+                        </div>
+                    </div>
+                    <div :class="$style.block">
+                        <div :class="$style.blockIcon">
+                            <IconBlock2 />
+                        </div>
+                        <div :class="[$style.blockText, 'black']">
+                            имеют уровень ХС ЛНП<br>
+                            <span class="pink">>3 ммоль/л</span>
+                        </div>
+                    </div>
+                    <div :class="$style.block">
+                        <div :class="$style.blockIcon">
+                            <IconBlock3 />
+                        </div>
+                        <div :class="[$style.blockText, 'black']">
+                            имеют уровень триглицеридов<br>
+                            <span class="pink">>1,7 ммоль/л</span>
+                        </div>
+                    </div>
+                    <div :class="$style.block">
+                        <div :class="$style.blockIcon">
+                            <IconBlock4 />
+                        </div>
+                        <div :class="[$style.blockText, 'black']">
+                            имеют сниженный уровень<br>
+                            ХС ЛВП – <span class="pink">{{ "<1, 0 ммоль / л у мужчин" }}</span><br>
+                            и <span class="pink">{{ "<1,2 ммоль/л у женщин" }}</span>
+                        </div>
+                    </div>
+                </VueHorizontal>
+            </div>
+            <SliderPagination
+                :count="count"
+                :index="index"
+                @onPageClick="onPageClick"
+            />
         </div>
     </div>
 </template>
 
 <script>
+import VueHorizontal from 'vue-horizontal'
 import IconBlock1 from '~/assets/svg/section-3/icon-1.svg'
 import IconBlock2 from '~/assets/svg/section-3/icon-2.svg'
 import IconBlock3 from '~/assets/svg/section-3/icon-3.svg'
 import IconBlock4 from '~/assets/svg/section-3/icon-4.svg'
+import IconSwipeLeft from '~/assets/svg/icon-swipe-left.svg'
+import pagination from '~/mixins/pagination'
+import SliderPagination from '~/components/common/SliderPagination/index.vue'
 
 export default {
     name: 'SectionThree',
     components: {
+        SliderPagination,
         IconBlock1,
         IconBlock2,
         IconBlock3,
-        IconBlock4
+        IconBlock4,
+        IconSwipeLeft,
+        VueHorizontal
+    },
+    mixins: [pagination],
+    data: function () {
+        return {
+            count: 4
+        }
     }
 }
 </script>
@@ -86,6 +109,11 @@ export default {
 
         padding-top: rem(120);
         padding-bottom: rem(197);
+
+        @include mobile {
+            padding-top: rem(90);
+            padding-bottom: rem(220);
+        }
     }
 
     .map {
@@ -96,11 +124,21 @@ export default {
         right: 50%;
         transform: translate(-50%, 0);
         bottom: rem(-488); // ~-48%
+
+        @include mobile {
+            width: rem(413);
+            bottom: rem(13);
+        }
     }
 
     .header {
         display: flex;
         justify-content: stretch;
+
+        @include mobile {
+            justify-content: flex-start;
+            flex-wrap: wrap;
+        }
 
         &Title {
             @include title;
@@ -115,6 +153,13 @@ export default {
             font-weight: $fw-medium;
             margin-top: rem(26);
             margin-left: rem(43);
+
+            @include mobile {
+                margin-top: rem(10);
+                margin-left: 0;
+                font-size: rem(16);
+                line-height: rem(26);
+            }
         }
     }
 
@@ -123,16 +168,44 @@ export default {
 
         width: calc(1315 * 100% / 1440);
         margin-top: rem(60);
+
+        @include mobile {
+            margin-top: rem(40);
+            font-size: rem(20);
+            line-height: rem(30);
+            width: 100%;
+        }
     }
 
     .blocks {
         margin-top: rem(40);
         display: flex;
-        justify-content: space-between;
+
+        & > div {
+            @include desktop {
+                width: 100%;
+            }
+
+            & > div {
+
+                @include desktop {
+                    justify-content: space-between;
+                }
+            }
+        }
+
+        @include mobile {
+            margin-top: rem(10);
+        }
     }
 
     .block {
         width: calc(329 * 100% / 1440);
+
+        @include mobile {
+            width: rem(210);
+            margin-right: rem(20);
+        }
 
         &Icon {
             position: relative;
@@ -154,6 +227,12 @@ export default {
             font-size: rem(18);
             line-height: rem(28);
             font-weight: $fw-medium;
+
+            @include mobile {
+                margin-top: rem(10);
+                font-size: rem(16);
+                line-height: rem(26);
+            }
 
             span {
                 font-weight: $fw-bold;

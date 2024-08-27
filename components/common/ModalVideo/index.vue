@@ -49,6 +49,7 @@
 <script>
 import Teleport from 'vue2-teleport'
 import IconPlay from '~/assets/svg/icon-play.svg'
+import modal from '~/mixins/modal'
 
 export default {
     name: 'ModalVideo',
@@ -56,6 +57,7 @@ export default {
         Teleport,
         IconPlay
     },
+    mixins: [modal],
     props: {
         type: {
             type: String,
@@ -76,30 +78,6 @@ export default {
         isBig: {
             type: Boolean,
             default: false
-        }
-    },
-    data: function () {
-        return {
-            show: false,
-            currentScroll: 0
-        }
-    },
-    methods: {
-        openModal () {
-            this.currentScroll = document.documentElement.scrollTop
-            const root = document.getElementById('root')
-            root.style.top = -this.currentScroll + 'px'
-            root.classList.add('showModal')
-            this.show = true
-        },
-        closeModal () {
-            document.getElementById('root').classList.remove('showModal')
-            const root = document.getElementById('root')
-            window.scroll({
-                top: this.currentScroll
-            })
-            root.style.top = 0
-            this.show = false
         }
     }
 }

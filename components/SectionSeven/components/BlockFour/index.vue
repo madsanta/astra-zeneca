@@ -26,7 +26,7 @@
                 Шаг III
             </div>
         </div>
-        <div :class="$style.items">
+        <div :class="[$style.items, {[$style.isShowMore]: isShowMore}]">
             <div v-show="activeTab === 1" :class="[$style.item, 'white']">
                 <div :class="[$style.itemTitle, 'text-shadow-2']">
                     I. Кому показано данное обследование в клинической практике?
@@ -54,7 +54,7 @@
                         <li>Мужчины и&nbsp;женщины в&nbsp;возрасте >65 лет</li>
                         <li>
                             {{
-                                'Мужчины и&nbsp;женщины в&nbsp;возрасте < 65 лет, но&nbsp;в&nbsp;группе высокого риска в&nbsp;соответствии                                    Рекомендациями ЕОКа'
+                                'Мужчины и&nbsp;женщины в&nbsp;возрасте < 65 лет, но&nbsp;в&nbsp;группе высокого риска в&nbsp;соответствии Рекомендациями ЕОКа'
                             }}
                         </li>
                         <li>Мужчины и&nbsp;женщины в&nbsp;возрасте >50 лет с&nbsp;ЗАНК в&nbsp;семейном анамнезе</li>
@@ -92,21 +92,31 @@
                 </div>
             </div>
         </div>
-        <div :class="[$style.caption, 'white']">
+        <div :class="[$style.caption, 'white', {[$style.isShowMore]: isShowMore}]">
             <span style="font-weight: 600;">Примечание:</span> <sup>а</sup> – субъекты со: значительно повышенным единичным фактором риска; сахарный диабет (кроме молодых людей с&nbsp;диабетом I типа и&nbsp;отсутствием других факторов риска); рассчитанный показатель ≥5% и&nbsp;{{ '<' }}10%.<br>
             <span style="font-weight: 600;">Сокращения:</span> АБА&nbsp;— аневризма брюшной аорты, ЕОК&nbsp;— Европейское общество кардиологов,<br>
             ЗАНК&nbsp;— заболевание артерий нижних конечностей, ЗПА&nbsp;— заболевание периферических артерий,<br>
             КБС&nbsp; — коронарная болезнь сердца, ЛПИ&nbsp; — лодыжечно-плечевой индекс, САД&nbsp; — систолическое артериальное давление, СН&nbsp;— сердечная недостаточность, ХЗП&nbsp;— хроническое заболевание почек.
         </div>
+        <ButtonAction
+            :class="[$style.button, 'onlyMobile']"
+            preset="white"
+            :title="!isShowMore ? 'Показать полностью' : 'Скрыть'"
+            @handleClick="isShowMore = !isShowMore"
+        />
     </div>
 </template>
 
 <script>
+import ButtonAction from '~/components/common/ButtonAction/index.vue'
+
 export default {
     name: 'BlockFour',
+    components: { ButtonAction },
     data: function () {
         return {
-            activeTab: 1
+            activeTab: 1,
+            isShowMore: false
         }
     },
     methods: {
@@ -125,6 +135,10 @@ export default {
     .block {
         width: 100%;
         padding-bottom: rem(20);
+
+        @include mobile {
+            padding-bottom: rem(40);
+        }
     }
 
     .title {
@@ -136,6 +150,12 @@ export default {
         line-height: rem(28);
         font-weight: $fw-medium;
         margin-top: rem(25);
+
+        @include mobile {
+            font-size: rem(15);
+            line-height: rem(25);
+            margin-top: rem(15);
+        }
     }
 
     .steps {
@@ -160,6 +180,12 @@ export default {
         box-shadow: inset 0 rem(4) rem(9) 0 rgba(#000, 0.55);
         transition: border-color 0.2s, background 0.2s, box-shadow 0.2s, color 0.2s;
 
+        @include mobile {
+            padding: rem(11) rem(16) rem(12);
+            font-size: rem(16);
+            min-width: rem(80);
+        }
+
         &:hover,
         &.active {
             box-shadow: none;
@@ -170,10 +196,23 @@ export default {
     }
 
     .items {
-        margin-toP: rem(25);
+        margin-top: rem(25);
+
+        @include mobile {
+            height: rem(155);
+            overflow: hidden;
+
+            &.isShowMore {
+                height: auto;
+            }
+        }
     }
 
     .item {
+        @include mobile {
+            width: 100% !important;
+            margin-bottom: 0 !important;
+        }
 
         &:nth-child(1) {
             width: calc(878 * 100% / 823);
@@ -193,12 +232,22 @@ export default {
             font-size: rem(22);
             line-height: rem(32);
             font-weight: $fw-extraBold;
+
+            @include mobile {
+                font-size: rem(18);
+                line-height: rem(28);
+            }
         }
 
         &Content {
             font-size: rem(17);
             line-height: rem(27);
             margin-top: rem(20);
+
+            @include mobile {
+                font-size: rem(15);
+                line-height: rem(25);
+            }
         }
 
         &Ul {
@@ -225,6 +274,11 @@ export default {
             justify-content: space-between;
             align-items: center;
 
+            @include mobile {
+                flex-direction: column-reverse;
+                padding-top: 0;
+            }
+
             &-img {
                 position: relative;
                 width: calc(454 * 100% / 884);
@@ -232,6 +286,12 @@ export default {
                 border-radius: rem(30);
 
                 @include relativeHeight(454, 400);
+
+                @include mobile {
+                    width: 100%;
+                    border-radius: rem(20);
+                    margin-top: rem(20);
+                }
 
                 img {
                     @include absoluteCoverImg();
@@ -243,6 +303,12 @@ export default {
                 font-size: rem(17);
                 line-height: rem(27);
                 font-weight: $fw-medium;
+
+                @include mobile {
+                    width: 100%;
+                    font-size: rem(15);
+                    line-height: rem(25);
+                }
             }
         }
 
@@ -265,5 +331,20 @@ export default {
         line-height: rem(20);
         color: #fff;
         opacity: 0.7;
+
+        @include mobile {
+            width: 100%;
+            font-size: rem(14);
+            margin-top: rem(20);
+            display: none;
+
+            &.isShowMore {
+                display: block;
+            }
+        }
+    }
+
+    .button {
+        margin-top: rem(26);
     }
 </style>

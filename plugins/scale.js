@@ -12,7 +12,7 @@ export default function () {
         } else if (currentWidth >= 1024) {
             cf = currentWidth * 100 / 1920
         } else {
-            cf = currentWidth * 100 / 320
+            cf = currentWidth * 100 / 375
         }
 
         fs = (base * cf / 100)

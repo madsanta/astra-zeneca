@@ -24,6 +24,10 @@ export default {
     .block {
         width: 100%;
         padding-bottom: rem(50);
+
+        @include mobile {
+            padding-bottom: rem(90);
+        }
     }
 
     .title {
@@ -35,6 +39,12 @@ export default {
         font-size: rem(18);
         line-height: rem(28);
         font-weight: $fw-medium;
+
+        @include mobile {
+            margin-top: rem(15);
+            font-size: rem(15);
+            line-height: rem(25);
+        }
     }
 
     .image {
@@ -44,6 +54,11 @@ export default {
         margin-top: rem(40);
 
         @include relativeHeight(823, 632);
+
+        @include mobile {
+            border-radius: rem(20);
+            margin-top: rem(30);
+        }
 
         img {
             @include absoluteCoverImg();

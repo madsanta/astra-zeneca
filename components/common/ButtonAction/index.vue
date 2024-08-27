@@ -63,8 +63,17 @@ export default {
         cursor: pointer;
         transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s, opacity 0.2s;
 
-        &:hover {
-            opacity: 0.8;
+        @include mobile {
+            letter-spacing: 0;
+            font-size: rem(15);
+            min-height: rem(61);
+            padding: rem(9) rem(40) rem(8);
+        }
+
+        @include desktop {
+            &:hover {
+                opacity: 0.8;
+            }
         }
 
         svg {
@@ -72,6 +81,11 @@ export default {
             width: rem(24);
             height: rem(24);
             fill: currentColor;
+
+            @include mobile {
+                display: inline;
+                margin-left: rem(10);
+            }
         }
 
         &.black {
@@ -79,10 +93,12 @@ export default {
             color: $c-blackBlue;
             border-color: $c-blackBlue;
 
-            &:hover {
-                background-color: $c-blackBlue;
-                color: #fff;
-                opacity: 1;
+            @include desktop {
+                &:hover {
+                    background-color: $c-blackBlue;
+                    color: #fff;
+                    opacity: 1;
+                }
             }
         }
 
@@ -92,10 +108,12 @@ export default {
             color: #fff;
             border-color: #fff;
 
-            &:hover {
-                background-color: #fff;
-                color: $c-blackBlue;
-                opacity: 1;
+            @include desktop {
+                &:hover {
+                    background-color: #fff;
+                    color: $c-blackBlue;
+                    opacity: 1;
+                }
             }
         }
 

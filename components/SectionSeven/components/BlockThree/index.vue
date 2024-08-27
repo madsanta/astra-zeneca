@@ -35,6 +35,10 @@ export default {
     .block {
         width: 100%;
         padding-bottom: rem(40);
+
+        @include mobile {
+            padding-bottom: rem(90);
+        }
     }
 
     .title {
@@ -46,6 +50,12 @@ export default {
         line-height: rem(28);
         font-weight: $fw-medium;
         margin-top: rem(25);
+
+        @include mobile {
+            font-size: rem(15);
+            line-height: rem(25);
+            margin-top: rem(15);
+        }
     }
 
     .warning {
@@ -57,25 +67,56 @@ export default {
 
         @include rainbow-block();
 
+        @include mobile {
+            position: relative;
+            padding: rem(15) rem(20) rem(20);
+            margin-top: rem(20);
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
         &Icon {
             flex: 0 0 auto;
             width: rem(129);
             height: rem(140);
+
+            @include mobile {
+                width: rem(46);
+                height: rem(44);
+            }
         }
 
         &Content {
             margin-left: rem(49);
 
+            @include mobile {
+                width: 100%;
+                margin-left: 0;
+            }
+
             &Title {
                 font-size: rem(28);
                 line-height: rem(38);
                 font-weight: $fw-extraBold;
+
+                @include mobile {
+                    font-size: rem(20);
+                    line-height: rem(30);
+                    position: absolute;
+                    top: rem(22);
+                    left: rem(87);
+                }
             }
 
             &Text {
                 font-size: rem(18);
                 font-weight: $fw-medium;
                 margin-top: rem(7);
+
+                @include mobile {
+                    font-size: rem(15);
+                    margin-top: rem(5);
+                }
             }
         }
     }
@@ -87,6 +128,11 @@ export default {
         overflow: hidden;
 
         @include relativeHeight(823, 498);
+
+        @include mobile {
+            border-radius: rem(20);
+            margin-top: rem(20);
+        }
 
         img {
             @include absoluteCoverImg();

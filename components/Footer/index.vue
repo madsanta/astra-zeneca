@@ -281,10 +281,10 @@
                 </div>
                 © ООО «АстраЗенека Фармасьютикалз», {{ getYear }}.
                 <span class="ml-md-0 ml-auto mt-md-4 mt-0">
-                    Номер одобрения: <span>RU-15024</span>
+                    Номер одобрения <span>RU-21455</span>
                     <br class="d-md-none">
-                    Дата одобрения: <span>16.11.2022</span> <br class="d-md-none">
-                    Дата истечения: 15.11.2024
+                    Дата одобрения  <span>30.07.2024</span> <br class="d-md-none">
+                    Дата истечения 29.07.2026
                 </span>
             </div>
         </div>

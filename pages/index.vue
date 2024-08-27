@@ -16,20 +16,20 @@
             <SectionTen />
             <SectionEleven />
         </div>
-        <SectionTwelve />
-        <SectionThirteen />
-        <div :class="$style.bgGray">
-            <SectionFourteen />
-            <SectionFifteen />
-            <SectionSixteen />
-        </div>
-        <SectionSeventeen />
+        <!--        <SectionTwelve />-->
+        <!--        <SectionThirteen />-->
+        <!--        <div :class="$style.bgGray">-->
+        <!--            <SectionFourteen />-->
+        <!--            <SectionFifteen />-->
+        <!--            <SectionSixteen />-->
+        <!--        </div>-->
+        <!--        <SectionSeventeen />-->
         <SectionEighteen />
-        <div :class="$style.bgGray">
-            <SectionNineteen />
-        </div>
-        <SectionTwenty />
-        <SectionTwentyOne />
+        <!--        <div :class="$style.bgGray">-->
+        <!--            <SectionNineteen />-->
+        <!--        </div>-->
+        <!--        <SectionTwenty />-->
+        <!--        <SectionTwentyOne />-->
         <SectionTwentyTwo />
         <FooterBlock />
     </div>
@@ -49,16 +49,16 @@ import SectionEight from '~/components/SectionEight/index.vue'
 import SectionNine from '~/components/SectionNine/index.vue'
 import SectionTen from '~/components/SectionTen/index.vue'
 import SectionEleven from '~/components/SectionEleven/index.vue'
-import SectionTwelve from '~/components/SectionTwelve/index.vue'
-import SectionThirteen from '~/components/SectionThirteen/index.vue'
-import SectionFourteen from '~/components/SectionFourteen/index.vue'
-import SectionFifteen from '~/components/SectionFifteen/index.vue'
-import SectionSixteen from '~/components/SectionSixteen/index.vue'
-import SectionSeventeen from '~/components/SectionSeventeen/index.vue'
+// import SectionTwelve from '~/components/SectionTwelve/index.vue'
+// import SectionThirteen from '~/components/SectionThirteen/index.vue'
+// import SectionFourteen from '~/components/SectionFourteen/index.vue'
+// import SectionFifteen from '~/components/SectionFifteen/index.vue'
+// import SectionSixteen from '~/components/SectionSixteen/index.vue'
+// import SectionSeventeen from '~/components/SectionSeventeen/index.vue'
 import SectionEighteen from '~/components/SectionEighteen/index.vue'
-import SectionNineteen from '~/components/SectionNineteen/index.vue'
-import SectionTwenty from '~/components/SectionTwenty/index.vue'
-import SectionTwentyOne from '~/components/SectionTwentyOne/index.vue'
+// import SectionNineteen from '~/components/SectionNineteen/index.vue'
+// import SectionTwenty from '~/components/SectionTwenty/index.vue'
+// import SectionTwentyOne from '~/components/SectionTwentyOne/index.vue'
 import SectionTwentyTwo from '~/components/SectionTwentyTwo/index.vue'
 
 export default {
@@ -77,16 +77,16 @@ export default {
         SectionNine,
         SectionTen,
         SectionEleven,
-        SectionTwelve,
-        SectionThirteen,
-        SectionFourteen,
-        SectionFifteen,
-        SectionSixteen,
-        SectionSeventeen,
+        // SectionTwelve,
+        // SectionThirteen,
+        // SectionFourteen,
+        // SectionFifteen,
+        // SectionSixteen,
+        // SectionSeventeen,
         SectionEighteen,
-        SectionNineteen,
-        SectionTwenty,
-        SectionTwentyOne,
+        // SectionNineteen,
+        // SectionTwenty,
+        // SectionTwentyOne,
         SectionTwentyTwo
     }
 }
