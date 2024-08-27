@@ -45,7 +45,7 @@
                     </div>
                 </VueHorizontal>
             </div>
-            <div :class="$style.description">
+            <div :class="$style.description" data-id="about">
                 <div :class="$style.descriptionShadow" />
                 <div :class="$style.descriptionInner">
                     <div :class="$style.descriptionIcon">

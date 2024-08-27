@@ -1,5 +1,5 @@
 <template>
-    <div :class="$style.section">
+    <div :class="$style.section" data-id="diagnostic">
         <div :class="$style.wrapper">
             <div :class="$style.inner">
                 <h3 :class="[$style.title, 'white', 'text-shadow-2']">
@@ -117,7 +117,7 @@ export default {
     .section {
         position: relative;
         background-image: url('~/assets/img/section-7/bg.jpg');
-        background-size: 100% / cover;
+        background-size: cover;
         background-attachment: scroll;
         background-position: top center;
         background-repeat: no-repeat;

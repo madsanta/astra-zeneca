@@ -1,7 +1,14 @@
 <template>
-    <button :class="[$style.button, $style[preset]]" role="button" @click="onClick">
+    <component
+        :is="download ? 'a' : 'button'"
+        :href="download ? href : null"
+        :class="[$style.button, $style[preset]]"
+        role="button"
+        :download="download"
+        @click="onClick"
+    >
         {{ title }}<slot name="icon" />
-    </button>
+    </component>
 </template>
 
 <script>
@@ -17,6 +24,10 @@ export default {
             default: null
         },
         target: {
+            type: String,
+            default: null
+        },
+        download: {
             type: String,
             default: null
         },
@@ -59,6 +70,7 @@ export default {
         margin-left: auto;
         margin-right: auto;
         font-size: rem(16);
+        width: fit-content;
         font-weight: $fw-semiBold;
         cursor: pointer;
         transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s, opacity 0.2s;

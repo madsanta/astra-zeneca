@@ -15,6 +15,36 @@ export default {
     name: 'Default',
     components: {
         TopMenu
+    },
+    data: function () {
+        return {
+            hash: ''
+        }
+    },
+    watch: {
+        $route (to) {
+            this.hash = to?.hash?.slice(1)
+
+            this.scrollTo()
+        }
+    },
+    mounted () {
+        this.hash = window.location?.hash?.slice(1)
+
+        this.scrollTo()
+    },
+    methods: {
+        scrollTo () {
+            if (this.hash) {
+                const element = document.querySelector(`[data-id=${this.hash}]`)
+
+                if (element) {
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
+                    }, 1)
+                }
+            }
+        }
     }
 }
 </script>

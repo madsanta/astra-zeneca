@@ -18,11 +18,11 @@
                 </div>
             </div>
             <nav :class="$style.menuInner">
-                <NuxtLink to="/">
-                    Об атеросклерозе
+                <NuxtLink to="#about" :custom="true">
+                    <a @click="closeMenu">Об атеросклерозе</a>
                 </NuxtLink>
-                <NuxtLink to="/">
-                    Диагностика дислипидемий
+                <NuxtLink to="#diagnostic" :custom="true">
+                    <a @click="closeMenu">Диагностика дислипидемий</a>
                 </NuxtLink>
                 <!--                <NuxtLink to="/">-->
                 <!--                    Лечение дислипидемий-->

@@ -22,7 +22,8 @@
                     :class="$style.contentButton"
                     preset="pink"
                     title="Шкала SCORE 2 на русском языке"
-                    href="/"
+                    href="SCORE 2_1.pdf"
+                    download="Шкала SCORE 2 на русском языке"
                     target="_blank"
                 >
                     <template #icon>
@@ -140,7 +141,7 @@ export default {
 
         &Button {
             margin-top: rem(30);
-            margin-left: 0;
+            margin-left: 0 !important;
         }
     }
 

@@ -8,7 +8,8 @@
                 :class="$style.descriptionButton"
                 preset="pink"
                 title="скачать шкалу"
-                href="/"
+                href="global-score.pdf"
+                download="Шкала глобальной оценки"
                 target="_blank"
             >
                 <template #icon>
@@ -77,12 +78,12 @@ export default {
         }
 
         &Button {
-            margin: 0;
+            margin: 0 !important;
 
             @include mobile {
                 margin-top: rem(25);
                 margin-left: auto;
-                margin-right: auto;
+                margin-right: auto !important;
             }
         }
     }

@@ -97,7 +97,8 @@
                     <ButtonAction
                         title="Скачать инструкцию Крестор® 5 мг"
                         preset="pink"
-                        href="/"
+                        href="/krestor5mg.pdf"
+                        download="Инструкция Крестор 5 мг"
                         target="_blank"
                     >
                         <template #icon>
@@ -114,7 +115,8 @@
                     <ButtonAction
                         title="Скачать инструкцию Крестор® 10, 20, 40 мг"
                         preset="blue"
-                        href="/"
+                        href="/krestor10mg20mg.pdf"
+                        download="Инструкция Крестор 10-20 мг"
                         target="_blank"
                     >
                         <template #icon>

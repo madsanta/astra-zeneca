@@ -3,7 +3,7 @@
         <div class="content">
             <div
                 class="footer__logo"
-                @click="toMenuItemFooter({ name: 'MainPage' }, 'Лого в футере')"
+                @click="toMenuItemFooter('https://az-most.ru/', 'Лого в футере')"
             >
                 <svg
                     height="40"
@@ -136,7 +136,7 @@
                     </div>
                     <div
                         class="footer__menu-item"
-                        @click="toMenuItemFooter({ name: 'ContactUs' }, 'Контакты')"
+                        @click="toMenuItemFooter('https://az-most.ru/contacts', 'Контакты')"
                     >
                         Контакты
                     </div>
@@ -155,7 +155,7 @@
                         class="footer__menu-item"
                         @click="
                             toMenuItemFooter(
-                                { name: 'AllRightsReserved' },
+                                'https://az-most.ru/all-rights-reserved',
                                 'Правовая информация'
                             )
                         "
@@ -182,7 +182,7 @@
                         class="footer__menu-item"
                         @click="
                             toMenuItemFooter(
-                                { name: 'ReportAdverseEvent' },
+                                'https://az-most.ru/report-adverse-event',
                                 'Сообщить о нежелательном явлении'
                             )
                         "
@@ -207,7 +207,7 @@
                         class="footer__menu-item"
                         @click="
                             toMenuItemFooter(
-                                { name: 'ReportDrugClaim' },
+                                'https://az-most.ru/report-a-drug-claim',
                                 'Сообщить о претензии на лекарственный препарат'
                             )
                         "
@@ -218,7 +218,7 @@
                         class="footer__menu-item"
                         @click="
                             toMenuItemFooter(
-                                { name: 'MedicalInfo' },
+                                'https://az-most.ru/medical-info',
                                 'Служба Медицинской Информации'
                             )
                         "
@@ -241,7 +241,7 @@
                 <div
                     class="footer__copyright-logo"
                     @click="
-                        toMenuItemFooter('https://astrazeneca.ru/', 'Логотип копирайт')
+                        toMenuItemFooter('https://az-most.ru/', 'Логотип копирайт')
                     "
                 >
                     <svg
