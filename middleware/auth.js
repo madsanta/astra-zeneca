@@ -19,28 +19,20 @@ export default async function ({ $axios, redirect }) {
             const res = await $axios.get('https://az-most.ru/api/auth/session', {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Credentials': 'true',
-                    'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-                    'Access-Control-Allow-Headers': '*'
+                    'Content-Type': 'application/json'
                 }
             })
 
             if (res.status === 200) {
                 localStorage.setItem('accessToken', accessToken)
             } else if (res.status === 401) {
-                const refresh = await $axios.post('https://az-most.ru/api/auth/sso-update-tokens',
+                const refresh = await $axios.post('https://sso.az-most.ru/api/token/refresh/',
                     {
                         refresh: refreshToken || ''
                     },
                     {
                         headers: {
-                            'Content-Type': 'application/json',
-                            'Access-Control-Allow-Origin': '*',
-                            'Access-Control-Allow-Credentials': 'true',
-                            'Access-Control-Allow-Methods': 'GET,HEAD,OPTIONS,POST,PUT',
-                            'Access-Control-Allow-Headers': '*'
+                            'Content-Type': 'application/json'
                         }
                     })
 

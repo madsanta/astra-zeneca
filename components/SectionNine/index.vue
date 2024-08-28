@@ -22,14 +22,25 @@
                     :class="$style.contentButton"
                     preset="pink"
                     title="Шкала SCORE 2 на русском языке"
-                    href="SCORE 2_1.pdf"
-                    download="Шкала SCORE 2 на русском языке"
+                    href="/"
                     target="_blank"
                 >
                     <template #icon>
                         <IconDownload />
                     </template>
                 </ButtonAction>
+                <!--                <ButtonAction-->
+                <!--                    :class="$style.contentButton"-->
+                <!--                    preset="pink"-->
+                <!--                    title="Шкала SCORE 2 на русском языке"-->
+                <!--                    href="/pdf/SCORE 2_1.pdf"-->
+                <!--                    download="Шкала SCORE 2 на русском языке"-->
+                <!--                    target="_blank"-->
+                <!--                >-->
+                <!--                    <template #icon>-->
+                <!--                        <IconDownload />-->
+                <!--                    </template>-->
+                <!--                </ButtonAction>-->
             </div>
             <div :class="$style.device">
                 <img src="~/assets/img/section-9/device.png">

@@ -10,7 +10,7 @@ export default {
 
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
-        title: 'galaxy',
+        title: 'Программа Galaxy - все об атеросклерозе и не только...',
         htmlAttrs: {
             lang: 'ru'
         },

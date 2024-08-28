@@ -8,14 +8,25 @@
                 :class="$style.descriptionButton"
                 preset="pink"
                 title="скачать шкалу"
-                href="global-score.pdf"
-                download="Шкала глобальной оценки"
+                href="/"
                 target="_blank"
             >
                 <template #icon>
                     <IconDownload />
                 </template>
             </ButtonAction>
+            <!--            <ButtonAction-->
+            <!--                :class="$style.descriptionButton"-->
+            <!--                preset="pink"-->
+            <!--                title="скачать шкалу"-->
+            <!--                href="/pdf/global-score.pdf"-->
+            <!--                download="Шкала глобальной оценки"-->
+            <!--                target="_blank"-->
+            <!--            >-->
+            <!--                <template #icon>-->
+            <!--                    <IconDownload />-->
+            <!--                </template>-->
+            <!--            </ButtonAction>-->
         </div>
         <div :class="[$style.content, {[$style.isShowMore]: isShowMore}]">
             <img class="onlyDesktop" src="~/assets/img/section-10/image.png">

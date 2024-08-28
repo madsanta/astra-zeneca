@@ -3,7 +3,7 @@
         <MainIntro />
         <div :class="$style.popupWrapper">
             <div :class="$style.popup">
-                <a :href="`https://sso.az-most.ru/signin?source=${source}&next_url=${next}`">Войти</a>
+                <ButtonAction preset="pink" title="Войти" :href="`https://sso.az-most.ru/signin?source=${source}&next_url=${next}`" />
             </div>
             <div :class="$style.popupOverflow" />
         </div>
@@ -12,10 +12,12 @@
 
 <script>
 import MainIntro from '~/components/MainIntro/index.vue'
+import ButtonAction from '~/components/common/ButtonAction/index.vue'
 
 export default {
     name: 'Login',
     components: {
+        ButtonAction,
         MainIntro
     },
     data: function () {
@@ -25,10 +27,8 @@ export default {
         }
     },
     mounted () {
-        const host = window.location.host
-        const href = window.location.href
-        this.source = href
-        this.next = host
+        this.source = window.location.href
+        this.next = window.location.origin
     }
 }
 </script>
@@ -53,22 +53,11 @@ export default {
         position: absolute;
         top: 50%;
         left: 50%;
-        width: rem(300);
-        height: rem(150);
-        background: #fff;
-        padding: rem(30);
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 3;
         transform: translate(-50%, -50%);
-
-        a {
-            font-size: rem(20);
-            color: $c-blackBlue;
-            padding: rem(10);
-            border: 1px solid $c-blackBlue;
-        }
 
         &Overflow {
             position: absolute;
@@ -77,7 +66,11 @@ export default {
             width: 100%;
             height: 100vh;
             z-index: 2;
-            background: rgba(#000, 0.8);
+            background: rgba(#000, 0.65);
+
+            @include mobile {
+                height: 100svh;
+            }
         }
     }
 </style>

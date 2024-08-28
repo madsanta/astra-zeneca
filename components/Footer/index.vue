@@ -353,9 +353,19 @@ export default {
         display: block;
     }
 
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         .d-md-none {
             display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 1220px) {
+        .ml-md-0, .ml-md-n-0 {
+            margin-left: 0 !important;
+        }
+
+        .mt-md-4 {
+            margin-top: 16px !important;
         }
     }
 

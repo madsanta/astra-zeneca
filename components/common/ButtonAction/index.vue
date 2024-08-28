@@ -1,10 +1,11 @@
 <template>
     <component
         :is="download ? 'a' : 'button'"
-        :href="download ? href : null"
+        :href="href"
         :class="[$style.button, $style[preset]]"
         role="button"
         :download="download"
+        :target="target"
         @click="onClick"
     >
         {{ title }}<slot name="icon" />
@@ -42,9 +43,10 @@ export default {
     methods: {
         onClick () {
             if (this.href) {
-                if (['blank', '_blank'].includes(this.target?.toLowerCase())) {
-                    const routeData = this.$router.resolve(this.href)
-                    window.open(routeData.href, '_blank')
+                const isBlank = ['blank', '_blank'].includes(this.target?.toLowerCase())
+
+                if (isBlank || this.href.match(/http(s)*:\/\//)) {
+                    window.open(this.href, isBlank ? '_blank' : '_self')
                 } else {
                     this.$router.push(this.href)
                 }
