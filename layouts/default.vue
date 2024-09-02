@@ -18,7 +18,8 @@ export default {
     },
     data: function () {
         return {
-            hash: ''
+            hash: '',
+            topMenuHeight: 0
         }
     },
     watch: {
@@ -31,22 +32,37 @@ export default {
     mounted () {
         this.hash = window.location?.hash?.slice(1)
 
+        this.resize()
+
         this.scrollTo()
 
         setTimeout(() => {
             window.location.reload()
         }, 1000 * 60 * 60 * 24) // every day reload
+
+        window.addEventListener('resize', this.resize)
+    },
+    destroyed () {
+        window.removeEventListener('resize', this.resize)
     },
     methods: {
+        resize () {
+            const topMenu = document.getElementById('TopMenu')
+            this.topMenuHeight = topMenu.offsetHeight
+        },
         scrollTo () {
             if (this.hash) {
                 const element = document.querySelector(`[data-id=${this.hash}]`)
-
-                if (element) {
-                    setTimeout(() => {
-                        element.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'nearest' })
-                    }, 1)
+                if (!element) {
+                    return
                 }
+
+                const windowScroll = window.scrollY
+                const scrollTop = element.getBoundingClientRect().top + windowScroll - this.topMenuHeight
+
+                window.scrollTo({ top: scrollTop, behavior: 'smooth' })
+
+                this.$router.push('/')
             }
         }
     }

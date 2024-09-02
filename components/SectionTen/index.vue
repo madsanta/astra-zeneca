@@ -8,25 +8,14 @@
                 :class="$style.descriptionButton"
                 preset="pink"
                 title="скачать шкалу"
-                href="/"
+                href="/pdf/global-score.pdf"
+                download="Шкала глобальной оценки"
                 target="_blank"
             >
                 <template #icon>
                     <IconDownload />
                 </template>
             </ButtonAction>
-            <!--            <ButtonAction-->
-            <!--                :class="$style.descriptionButton"-->
-            <!--                preset="pink"-->
-            <!--                title="скачать шкалу"-->
-            <!--                href="/pdf/global-score.pdf"-->
-            <!--                download="Шкала глобальной оценки"-->
-            <!--                target="_blank"-->
-            <!--            >-->
-            <!--                <template #icon>-->
-            <!--                    <IconDownload />-->
-            <!--                </template>-->
-            <!--            </ButtonAction>-->
         </div>
         <div :class="[$style.content, {[$style.isShowMore]: isShowMore}]">
             <img class="onlyDesktop" src="~/assets/img/section-10/image.png">
@@ -92,8 +81,8 @@ export default {
             margin: 0 !important;
 
             @include mobile {
-                margin-top: rem(25);
-                margin-left: auto;
+                margin-top: rem(25) !important;
+                margin-left: auto !important;
                 margin-right: auto !important;
             }
         }

@@ -1,5 +1,5 @@
 <template>
-    <div :class="$style.section">
+    <div :class="$style.section" data-id="risk-factors">
         <h3 :class="[$style.title, 'black']">
             <span class="pink">Факторы риска</span> развития и прогрессирования атеросклероза<sup>1</sup>
         </h3>

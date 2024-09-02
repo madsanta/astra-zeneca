@@ -1,5 +1,5 @@
 <template>
-    <div :class="[$style.section, 'black']">
+    <div :class="[$style.section, 'black']" data-id="lipidogram">
         <h3 :class="$style.title">
             <span class="pink">Основные</span> показатели липидограммы <sup>1,11</sup>
         </h3>

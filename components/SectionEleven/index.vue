@@ -1,5 +1,5 @@
 <template>
-    <div :class="[$style.section, 'black']">
+    <div :class="[$style.section, 'black']" data-id="instrumental-methods">
         <div :class="$style.title">
             Инструментальные методы диагностики <sup>1</sup>
         </div>

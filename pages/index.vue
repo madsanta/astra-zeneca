@@ -88,7 +88,8 @@ export default {
         // SectionTwenty,
         // SectionTwentyOne,
         SectionTwentyTwo
-    }
+    },
+    scrollToTop: false
 }
 </script>
 

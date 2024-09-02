@@ -1,5 +1,5 @@
 <template>
-    <div :class="$style.wrapper">
+    <div id="TopMenu" :class="$style.wrapper">
         <div :class="$style.logo">
             <NuxtLink to="/">
                 <Logo />

@@ -21,8 +21,8 @@
                             Выявление основных факторов риска
                         </div>
                         <div :class="$style.blockButton">
-                            <ButtonAction class="onlyDesktop" preset="gradient-1" title="Подробнее" href="/" target="_blank" />
-                            <NuxtLink :class="['onlyMobile', $style.button1]" to="/">
+                            <ButtonAction class="onlyDesktop" preset="gradient-1" title="Подробнее" href="#risk-factors" />
+                            <NuxtLink :class="['onlyMobile', $style.button1]" to="#risk-factors">
                                 Подробнее
                             </NuxtLink>
                         </div>
@@ -35,8 +35,8 @@
                             Выявление клинических симптомов атеросклероза (данные опроса и осмотра)
                         </div>
                         <div :class="$style.blockButton">
-                            <ButtonAction class="onlyDesktop" preset="gradient-2" title="Подробнее" href="/" target="_blank" />
-                            <NuxtLink :class="['onlyMobile', $style.button2]" to="/">
+                            <ButtonAction class="onlyDesktop" preset="gradient-2" title="Подробнее" href="#diagnostic" />
+                            <NuxtLink :class="['onlyMobile', $style.button2]" to="#diagnostic">
                                 Подробнее
                             </NuxtLink>
                         </div>
@@ -49,8 +49,8 @@
                             Определение липидного профиля
                         </div>
                         <div :class="$style.blockButton">
-                            <ButtonAction class="onlyDesktop" preset="gradient-3" title="Подробнее" href="/" target="_blank" />
-                            <NuxtLink :class="['onlyMobile', $style.button3]" to="/">
+                            <ButtonAction class="onlyDesktop" preset="gradient-3" title="Подробнее" href="#lipidogram" />
+                            <NuxtLink :class="['onlyMobile', $style.button3]" to="#lipidogram">
                                 Подробнее
                             </NuxtLink>
                         </div>
@@ -63,8 +63,8 @@
                             Оценка ССР и оценка по шкале SCORE2
                         </div>
                         <div :class="$style.blockButton">
-                            <ButtonAction class="onlyDesktop" preset="gradient-4" title="Подробнее" href="/" target="_blank" />
-                            <NuxtLink :class="['onlyMobile', $style.button4]" to="/">
+                            <ButtonAction class="onlyDesktop" preset="gradient-4" title="Подробнее" href="#heart-risk" />
+                            <NuxtLink :class="['onlyMobile', $style.button4]" to="#heart-risk">
                                 Подробнее
                             </NuxtLink>
                         </div>
@@ -77,8 +77,8 @@
                             Исключение/верификация субклинического и клинически значимого атеросклероза (инструментальные методы обследования)
                         </div>
                         <div :class="$style.blockButton">
-                            <ButtonAction class="onlyDesktop" preset="gradient-5" title="Подробнее" href="/" target="_blank" />
-                            <NuxtLink :class="['onlyMobile', $style.button5]" to="/">
+                            <ButtonAction class="onlyDesktop" preset="gradient-5" title="Подробнее" href="#instrumental-methods" />
+                            <NuxtLink :class="['onlyMobile', $style.button5]" to="#instrumental-methods">
                                 Подробнее
                             </NuxtLink>
                         </div>
