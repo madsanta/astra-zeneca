@@ -19,9 +19,9 @@
                     <div :class="$style.bubblesPopupClose" @click="closeBubble">
                         <IconClose />
                     </div>
-                    <img v-if="isShowBubble[0]" src="~/assets/img/intro/bubble-1.jpg">
-                    <img v-if="isShowBubble[1]" src="~/assets/img/intro/bubble-2.jpg">
-                    <img v-if="isShowBubble[2]" src="~/assets/img/intro/bubble-3.jpg">
+                    <img v-if="isShowBubble[0]" src="~/assets/img/intro/bubble-1.png">
+                    <img v-if="isShowBubble[1]" src="~/assets/img/intro/bubble-2.png">
+                    <img v-if="isShowBubble[2]" src="~/assets/img/intro/bubble-3.png">
                 </div>
             </Teleport>
         </div>
