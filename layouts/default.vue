@@ -34,7 +34,9 @@ export default {
 
         this.resize()
 
-        this.scrollTo()
+        setTimeout(() => {
+            this.scrollTo()
+        }, 100)
 
         setTimeout(() => {
             window.location.reload()
@@ -61,8 +63,6 @@ export default {
                 const scrollTop = element.getBoundingClientRect().top + windowScroll - this.topMenuHeight
 
                 window.scrollTo({ top: scrollTop, behavior: 'smooth' })
-
-                this.$router.push('/')
             }
         }
     }
