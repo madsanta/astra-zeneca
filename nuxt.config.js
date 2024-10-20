@@ -6,7 +6,7 @@ export default {
     target: 'static',
     router: {
         // middleware: 'auth',
-        base: '/astra-zeneca/'
+        // base: '/astra-zeneca/'
     },
 
     // Global page headers: https://go.nuxtjs.dev/config-head
