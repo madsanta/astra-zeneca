@@ -336,11 +336,9 @@ export default {
 
         &More {
             @include mobile {
-                position: relative;
-                font-size: rem(16);
+                @include moreButton;
+
                 margin-top: rem(12);
-                text-decoration: underline;
-                z-index: 5;
             }
         }
     }

@@ -5,7 +5,7 @@ export default async function ({ $axios, redirect }) {
 
     const params = new URL(window.location.toString()).searchParams
     const paramsAccessToken = params.get('access_token')
-    const paramsRefreshToken = params.get('refresh_token')
+    const paramsRefreshToken = params.get('refresh')
 
     if (paramsAccessToken === uniqStaffToken) {
         if (path !== '/') {
@@ -54,6 +54,12 @@ export default async function ({ $axios, redirect }) {
                     localStorage.setItem('refreshToken', refresh.data?.refresh_token)
                 } else if (!path.includes('login')) {
                     redirect(`${host}/login`)
+
+                    return
+                }
+
+                if (path.includes('login')) {
+                    redirect(`${host}`)
                 }
             }
         } catch (e) {

@@ -92,28 +92,34 @@ export default {
 
         @include rainbow-shadow();
 
+        @include mobile {
+            border-radius: rem(20);
+        }
+
         &::before {
             opacity: 0;
             transition: opacity 0.2s;
         }
 
-        &:hover {
-            &.isHover {
-                box-shadow: none;
+        @include desktop {
+            &:hover {
+                &.isHover {
+                    box-shadow: none;
 
-                &::before {
-                    opacity: 1 !important;
-                }
-            }
-
-            .preview{
-                &Play {
-                    opacity: 1 !important;
-                    transform: translate(-50%, -50%) scale(1.2);
+                    &::before {
+                        opacity: 1 !important;
+                    }
                 }
 
-                &Overload {
-                    opacity: 1 !important;
+                .preview {
+                    &Play {
+                        opacity: 1 !important;
+                        transform: translate(-50%, -50%) scale(1.2);
+                    }
+
+                    &Overload {
+                        opacity: 1 !important;
+                    }
                 }
             }
         }
@@ -160,6 +166,11 @@ export default {
             height: rem(110);
             transform: translate(-50%, -50%);
             transition: opacity 0.2s, transform 0.2s;
+
+            @include mobile {
+                width: rem(70);
+                height: rem(70);
+            }
         }
 
         &Overload {
@@ -207,6 +218,10 @@ export default {
             transform: translate(0, -100%);
             transition: opacity 0.2s;
 
+            @include mobile {
+                font-size: rem(10);
+            }
+
             &:hover {
                 opacity: 0.7;
             }
@@ -220,6 +235,11 @@ export default {
             transform: translate(-50%, -50%);
 
             @include relativeHeight(560, 315);
+
+            @include mobile {
+                max-height: 85svh;
+                width: 90%;
+            }
 
             iframe,
             video {

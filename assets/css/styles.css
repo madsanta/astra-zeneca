@@ -75,6 +75,27 @@ img {
     color: #fff;
 }
 
+.paginationWrapper {
+    position: relative;
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.3rem;
+}
+
+.paginationWrapper .pagination {
+    align-self: center;
+    margin-top: 0;
+}
+
+.paginationWrapper svg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 0.3rem;
+}
+
 /* mobile*/
 @media (max-width: 1023px) {
     .onlyDesktop {

@@ -21,6 +21,14 @@
     }
 }
 
+@mixin moreButton {
+    position: relative;
+    z-index: 5;
+    font-size: rem(16);
+    font-weight: $fw-semiBold;
+    text-decoration: underline;
+}
+
 // media-query
 @mixin desktop {
     @media (min-width: 1024px) { @content; }

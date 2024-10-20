@@ -24,9 +24,9 @@
                 <NuxtLink to="#diagnostic" :custom="true">
                     <a @click="closeMenu">Диагностика дислипидемий</a>
                 </NuxtLink>
-                <!--                <NuxtLink to="/">-->
-                <!--                    Лечение дислипидемий-->
-                <!--                </NuxtLink>-->
+                <NuxtLink to="#treatment">
+                    <a @click="closeMenu">Лечение дислипидемий</a>
+                </NuxtLink>
                 <!--                <NuxtLink to="/">-->
                 <!--                    Исследования GALAXY-->
                 <!--                </NuxtLink>-->

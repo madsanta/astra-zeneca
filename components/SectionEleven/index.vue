@@ -104,8 +104,7 @@ export default {
 
         @include mobile {
             padding-top: rem(90);
-            //padding-bottom: rem(200); // Правильный отступ при всех блоках
-            padding-bottom: rem(50);
+            padding-bottom: rem(200);
         }
     }
 

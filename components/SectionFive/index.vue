@@ -85,9 +85,9 @@
                     </div>
                 </VueHorizontal>
             </div>
-            <div :class="[$style.paginationWrapper, 'onlyMobile']">
+            <div :class="[$style.paginationWrapper, 'paginationWrapper', 'onlyMobile']">
                 <SliderPagination
-                    :class="$style.pagination"
+                    class="pagination"
                     :count="count"
                     :index="index"
                     @onPageClick="onPageClick"
@@ -209,24 +209,7 @@ export default {
     }
 
     .paginationWrapper {
-        position: relative;
         margin-top: rem(70);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: rem(30);
-
-        .pagination {
-            align-self: center;
-            margin-top: 0;
-        }
-
-        svg {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: rem(30);
-        }
     }
 
     .block {
