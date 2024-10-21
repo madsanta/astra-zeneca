@@ -20,7 +20,7 @@
             is-big
             type="video/mp4"
             :preview="require('~/assets/img/section-13/preview.jpg')"
-            video-url="https://vjs.zencdn.net/v/oceans.mp4"
+            video-url="/video/Krestor_06.12.23_fin_wn.mp4"
         />
     </div>
 </template>
